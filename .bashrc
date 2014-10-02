@@ -90,6 +90,10 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+if [ -f ~/.bash_profile ]; then
+	. ~/.bash_profile
+fi
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -106,5 +110,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-xmodmap ~/.Xmodmap
-alias hoggers="ps -eo pid,comm,%cpu | sort -rk 3 | head"
+export PATH=$PATH:~/scala/sbt/bin/:~/bin/
