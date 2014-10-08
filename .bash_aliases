@@ -23,3 +23,6 @@ alias ...='cd ../..'
 alias sourcebash='source ~/.bashrc'
 alias ....='cd ../../../'
 alias gohome='cd && clear'
+alias goschool="cd ~/Copy/gt/current/"
+alias logisim="java -jar ~/bin/logisim-generic-2.7.1.jar"
+alias latexclean='rm *.aux *.out *.log'
