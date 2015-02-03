@@ -111,3 +111,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:~/scala/sbt/bin/:~/bin/
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources

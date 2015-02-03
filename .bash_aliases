@@ -18,11 +18,19 @@ alias junit=run_junit
 alias git-rm-del="git ls-files --deleted -z | xargs -0 git rm"
 alias reload-apache="sudo service apache2 reload"
 alias ..='cd ..'
-alias rossource='source ~/ros_catkin_ws/install_isolated/setup.bash'
 alias ...='cd ../..'
-alias sourcebash='source ~/.bashrc'
 alias ....='cd ../../../'
+alias rossource='source ~/ros_catkin_ws/install_isolated/setup.bash'
+alias sourcebash='source ~/.bashrc'
 alias gohome='cd && clear'
 alias goschool="cd ~/Copy/gt/current/"
-alias logisim="java -jar ~/bin/logisim-generic-2.7.1.jar"
+
+run_logisim() {
+    java -jar ~/bin/logisim-generic-2.7.1.jar "$1" &> /dev/null &
+}
+
+alias logisim=run_logisim
 alias latexclean='rm *.aux *.out *.log'
+alias open=gnome-open
+alias xresmerg='xrdb -merge ~/.Xresources'
+alias go1331='cd ~/copy/gt/cs1331/'
