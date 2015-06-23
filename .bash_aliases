@@ -1,6 +1,8 @@
 alias quickserver="python -m SimpleHTTPServer"
 alias java7="/usr/local/java/jdk1.7.0_67/bin/java"
 alias javac7="/usr/local/java/jdk1.7.0_67/bin/javac"
+alias java9="/usr/local/java/jdk1.9.0/bin/java"
+alias javac9="/usr/local/java/jdk1.9.0/bin/javac"
 alias sbt="sbt -java-home /usr/local/java/jdk1.7.0_67/"
 
 alias sagu="sudo apt-get update"
@@ -31,6 +33,9 @@ run_logisim() {
 
 alias logisim=run_logisim
 alias latexclean='rm *.aux *.out *.log'
-alias open=gnome-open
+def_open() {
+    gnome-open "$1" &> /dev/null &
+}
+alias open=def_open
 alias xresmerg='xrdb -merge ~/.Xresources'
 alias go1331='cd ~/copy/gt/cs1331/'

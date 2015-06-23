@@ -90,9 +90,10 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-if [ -f ~/.bash_profile ]; then
-	. ~/.bash_profile
-fi
+#uncomment and swap with bash_profile's sourcing for non-login shells
+#if [ -f ~/.bash_profile ]; then
+#	. ~/.bash_profile
+#fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -115,3 +116,5 @@ export PATH=$PATH:~/scala/sbt/bin/:~/bin/
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+echo "keycode 58 = Escape" | loadkeys &> /dev/null
