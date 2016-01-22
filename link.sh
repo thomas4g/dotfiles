@@ -6,3 +6,4 @@ ln -is dotfiles/.vimrc .vimrc
 ln -is dotfiles/.viminfo .viminfo
 ln -is dotfiles/.Xmodmap .Xmodmap
 ln -is dotfiles/.i3/config .i3/config
+ln -is dotfiles/i3status.conf /etc/i3status.conf
