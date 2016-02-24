@@ -91,9 +91,6 @@ alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 #uncomment and swap with bash_profile's sourcing for non-login shells
-if [ -f ~/.bash_profile ]; then
-	. ~/.bash_profile
-fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -111,23 +108,26 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PATH=$PATH:~/bin/:~/git/github.gatech.edu/cs1331/scripts/:~/git/github.gatech.edu/cs1331/scripts/grading/:~/gradle-2.10/bin
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-echo "keycode 58 = Escape" | loadkeys &> /dev/null
 
-fetchmail
-MAIL=/var/spool/mail/thomas && export MAIL
+#fetchmail
+#MAIL=/var/spool/mail/thomas && export MAIL
 export CS1331_HOME=~/git/github.gatech.edu
-export CS1331_SEMESTER=cs1331-fall2015
-
-PATH="/home/thomas/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/thomas/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/thomas/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/thomas/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/thomas/perl5"; export PERL_MM_OPT;
+export CS1331_SEMESTER=cs1331-spring2016
 
 export JAVA_HOME=/usr/local/java/jdk_current
+
+#nocaps
+
+if [ -f ~/.bash_profile ]; then
+	. ~/.bash_profile
+fi
+
+if [ -f ~/.bash_path ]; then
+    . ~/.bash_path
+fi
+
+export EDITOR=vim
+export PYTHONPATH=:/home/tshields/git/github.com/scikit-learn/scikit-learn:/home/tshields/git/github.com/scikit-learn/scikit-learn

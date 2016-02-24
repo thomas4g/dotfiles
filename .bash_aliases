@@ -40,3 +40,5 @@ alias xresmerg='xrdb -merge ~/.Xresources'
 alias go1331='cd ~/copy/gt/cs1331/'
 
 alias clipboard='xclip -sel clip'
+alias nocaps='dumpkeys | sed "s/\s*58\s*=\s*Caps_Lock/ 58 = Control/" | loadkeys'
+
