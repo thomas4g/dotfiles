@@ -14,7 +14,8 @@ Plugin 'derekwyatt/vim-scala'
 "Plugin 'rakr/vim-rakr-light'
 "Plugin 'Donearm/Laederon'
 Plugin 'NLKNguyen/papercolor-theme'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin on
@@ -35,12 +36,12 @@ set number
 
 set t_Co=256
 
-set background=light
+set background=dark
 "highlight LineNr ctermfg=grey ctermbg=None
-colorscheme PaperColor
+"colorscheme PaperColor
 "colorscheme solarized
-"colorscheme distinguished 
-"colorscheme pencil 
+colorscheme distinguished
+"colorscheme pencil
 "colorscheme rakr-light
 "colorscheme laederon
 "hi Normal ctermbg=None
@@ -48,7 +49,7 @@ colorscheme PaperColor
 
 set encoding=utf-8
 let g:airline_powerline_fonts = 1
-let g:airline_theme='PaperColor'
+let g:airline_theme='papercolor'
 "let g:airline_theme='powerlineish'
 "let g:airline_theme='pencil'
 let g:pencil_terminal_italics=1
@@ -57,6 +58,7 @@ let g:pencil_terminal_italics=1
 "match OverLength /\%81v.\+/
 highlight ColorColumn ctermbg=136
 autocmd BufRead,BufNewFile   *.java setlocal colorcolumn=100
+
 set wrap
 
 map j gj
@@ -80,3 +82,24 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_java_checkstyle_classpath = '~/dotfiles/checkstyle/checkstyle-6.19-all.jar'
+"let g:syntastic_java_checkstyle_conf_file = '~/dotfiles/checkstyle/google_checks.xml'
+let g:syntastic_java_checkstyle_conf_file = '~/dotfiles/checkstyle/sun_checks.xml'
+
+let g:syntastic_java_checkers = ['checkstyle']
+let g:syntastic_javascript_checkers = ['standard']
+
+let g:ctrlp_custom_ignore = '\.class'
+
+set backspace=2
+
+autocmd BufRead,BufNewFile *.js setlocal ts=2 shiftwidth=2 expandtab
+
+"autocmd bufwritepost *.js silent !standard-format -w %
+"set autoread
+set ff=unix
+
+let g:vundle_default_git_proto='git'
+
+set expandtab
