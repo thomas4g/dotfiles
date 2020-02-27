@@ -131,3 +131,6 @@ fi
 
 export EDITOR=vim
 export PYTHONPATH=:/home/tshields/git/github.com/scikit-learn/scikit-learn:/home/tshields/git/github.com/scikit-learn/scikit-learn
+# Run twolfson/sexy-bash-prompt
+[ -f ~/.bash_prompt ] && . ~/.bash_prompt
+
