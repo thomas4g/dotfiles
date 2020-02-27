@@ -16,6 +16,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-latex/vim-latex'
 
 call vundle#end()
 filetype plugin on
