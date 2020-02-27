@@ -45,3 +45,6 @@ alias nocaps='dumpkeys | sed "s/\s*58\s*=\s*Caps_Lock/ 58 = Control/" | loadkeys
 alias prettylog="git log --pretty=format:'%C(yellow)%h %Cred%ar(%ad) %Cblue%an%Cgreen%d %Creset%s' --date=short"
 alias prettyjson='python -m json.tool'
 
+alias man="PAGER=most man"
+
+alias cat="bat"
