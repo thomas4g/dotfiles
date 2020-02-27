@@ -134,3 +134,4 @@ export PYTHONPATH=:/home/tshields/git/github.com/scikit-learn/scikit-learn:/home
 # Run twolfson/sexy-bash-prompt
 [ -f ~/.bash_prompt ] && . ~/.bash_prompt
 
+export MANWIDTH=80
