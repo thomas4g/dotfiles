@@ -17,6 +17,11 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-latex/vim-latex'
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'burnettk/vim-angular'
+Plugin 'motus/pig.vim'
+Plugin 'Townk/vim-autoclose'
 
 call vundle#end()
 filetype plugin on
@@ -91,6 +96,8 @@ let g:syntastic_java_checkstyle_conf_file = '~/dotfiles/checkstyle/sun_checks.xm
 let g:syntastic_java_checkers = ['checkstyle']
 let g:syntastic_javascript_checkers = ['standard']
 
+let g:syntastic_python_checkers = ['pyflakes']
+
 let g:ctrlp_custom_ignore = '\.class'
 
 set backspace=2
@@ -103,4 +110,22 @@ set ff=unix
 
 let g:vundle_default_git_proto='git'
 
+let g:syntastic_html_tidy_ignore_errors=[
+    \" proprietary attribute \"ng-",
+    \" proprietary attribute \"(click)",
+    \" proprietary attribute \"*ng"]
+
+let g:syntastic_tex_lacheck_quiet_messages = { 'regex': '\Vpossible unwanted space at' }
+
 set expandtab
+
+" how-to see the non-visible while spaces
+:set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+:set tabstop=16
+:set softtabstop=4
+:set list
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" :set list
+" but hei how-to unset the visible tabs ?!
+" :set nolist
+  
