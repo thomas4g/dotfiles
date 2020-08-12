@@ -17,11 +17,12 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-latex/vim-latex'
-Plugin 'Lokaltog/vim-distinguished'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'motus/pig.vim'
 Plugin 'Townk/vim-autoclose'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 filetype plugin on
@@ -41,17 +42,20 @@ set expandtab
 set number
 
 set t_Co=256
-
 set background=dark
-"highlight LineNr ctermfg=grey ctermbg=None
-"colorscheme PaperColor
+colorscheme PaperColor
 "colorscheme solarized
-colorscheme distinguished
+"colorscheme distinguished
 "colorscheme pencil
 "colorscheme rakr-light
 "colorscheme laederon
-"hi Normal ctermbg=None
-
+highlight LineNr ctermfg=32 ctermbg=none
+highlight Normal ctermbg=none ctermfg=none
+highlight CursorLine ctermbg=24
+highlight CursorColumn ctermbg=24
+highlight CursorLineNr ctermbg=33 ctermfg=white
+set cursorline
+"set cursorcolumn
 
 set encoding=utf-8
 let g:airline_powerline_fonts = 1
@@ -62,7 +66,6 @@ let g:pencil_terminal_italics=1
 
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
-highlight ColorColumn ctermbg=136
 autocmd BufRead,BufNewFile   *.java setlocal colorcolumn=100
 
 set wrap
@@ -129,3 +132,5 @@ set expandtab
 " but hei how-to unset the visible tabs ?!
 " :set nolist
   
+
+let g:vim_markdown_folding_level = 6
