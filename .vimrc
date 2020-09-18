@@ -23,6 +23,8 @@ Plugin 'motus/pig.vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'neo4j-contrib/cypher-vim-syntax'
+Plugin 'stephpy/vim-yaml'
 
 call vundle#end()
 filetype plugin on
@@ -51,6 +53,7 @@ colorscheme PaperColor
 "colorscheme laederon
 highlight LineNr ctermfg=32 ctermbg=none
 highlight Normal ctermbg=none ctermfg=none
+highlight NonText ctermbg=none
 highlight CursorLine ctermbg=24
 highlight CursorColumn ctermbg=24
 highlight CursorLineNr ctermbg=33 ctermfg=white
@@ -132,5 +135,6 @@ set expandtab
 " but hei how-to unset the visible tabs ?!
 " :set nolist
   
+set wildmenu
 
 let g:vim_markdown_folding_level = 6
