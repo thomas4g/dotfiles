@@ -35,7 +35,7 @@ alias latexclean='rm *.aux *.out *.log'
 def_open() {
     gnome-open "$1" &> /dev/null &
 }
-alias open=def_open
+#alias open=def_open
 alias xresmerg='xrdb -merge ~/.Xresources'
 alias go1331='cd ~/copy/gt/cs1331/'
 
@@ -48,3 +48,37 @@ alias prettyjson='python -m json.tool'
 alias man="PAGER=most man"
 
 alias cat="bat"
+#alias dc="docker-compose"
+
+mvn_deploy() {
+    read -sp "Password: " password
+    mvn deploy -Drepo.pwd=${password}
+}
+
+git_log_stats() {
+    git log --no-merges --format=format:"%H" --shortstat "$@" |
+        grep . |
+        paste -d " " - - | 
+        tr -s " "
+}
+
+alias desktop="ssh -t desktop tmux attach"
+alias dev="ssh -t dev tmux attach"
+
+post_json() {
+    server="$1"
+    shift 1
+    curl -XPOST -H "Content-Type: application/json" "$server" -d"$@"
+}
+
+
+
+merge() {
+cat "$@" | sort -u
+}
+
+highlight() {
+query="$1"
+context_lines="${2:-15}"
+grep --color=always -C "$context_lines" "$query"
+}

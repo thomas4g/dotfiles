@@ -13,8 +13,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -119,13 +119,12 @@ fi
 export CS1331_HOME=~/git/github.gatech.edu
 export CS1331_SEMESTER=cs1331-spring2016
 
-export JAVA_HOME=/usr/local/java/jdk_current
 
 #nocaps
 
-if [ -f ~/.bash_profile ]; then
-	. ~/.bash_profile
-fi
+#if [ -f ~/.bash_profile ]; then
+#	. ~/.bash_profile
+#fi
 
 if [ -f ~/.bash_path ]; then
     . ~/.bash_path
@@ -135,5 +134,21 @@ export EDITOR=vim
 export PYTHONPATH=:/home/tshields/git/github.com/scikit-learn/scikit-learn:/home/tshields/git/github.com/scikit-learn/scikit-learn
 # Run twolfson/sexy-bash-prompt
 [ -f ~/.bash_prompt ] && . ~/.bash_prompt
+[ -f ~/git-completion.bash ] && . ~/git-completion.bash
 
 export MANWIDTH=80
+
+jdk() {
+        version=$1
+        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+        java -version
+ }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(aliases init --global)"
+
+export GPG_TTY=$(tty)
+
+eval "$(direnv hook bash)"

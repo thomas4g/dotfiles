@@ -1,10 +1,11 @@
 set nocompatible
 filetype off
 
+let g:vundle_default_git_proto='https'
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -114,8 +115,6 @@ autocmd BufRead,BufNewFile *.js setlocal ts=2 shiftwidth=2 expandtab
 "set autoread
 set ff=unix
 
-let g:vundle_default_git_proto='git'
-
 let g:syntastic_html_tidy_ignore_errors=[
     \" proprietary attribute \"ng-",
     \" proprietary attribute \"(click)",
@@ -127,9 +126,9 @@ set expandtab
 
 " how-to see the non-visible while spaces
 :set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-:set tabstop=16
+:set tabstop=4
 :set softtabstop=4
-:set list
+":set list
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " :set list
 " but hei how-to unset the visible tabs ?!
